@@ -18,9 +18,8 @@ logging.basicConfig(
     encoding="utf-8"
 )
 
-# ---------------------------------------------------------------------
 # EXCEPCIONES PERSONALIZADAS
-# ---------------------------------------------------------------------
+
 class SistemaFJError(Exception):
     """Excepción general para los errores controlados del sistema."""
     pass
@@ -37,9 +36,8 @@ class ReservaError(SistemaFJError):
     """Se presenta cuando una reserva no puede procesarse."""
     pass
 
-# ---------------------------------------------------------------------
 # CLASE ABSTRACTA GENERAL
-# ---------------------------------------------------------------------
+
 class Entidad(ABC):
     """Representa una entidad general que debe tener un identificador."""
 
@@ -58,9 +56,8 @@ class Entidad(ABC):
         """Cada entidad concreta debe implementar este método."""
         pass
 
-# ---------------------------------------------------------------------
 # CLASE CLIENTE
-# ---------------------------------------------------------------------
+
 class Cliente(Entidad):
     """Almacena los datos básicos de un cliente con atributos encapsulados."""
 
@@ -97,9 +94,8 @@ class Cliente(Entidad):
             f"Correo: {self.__correo} | Teléfono: {self.__telefono}"
         )
 
-# ---------------------------------------------------------------------
 # CLASE ABSTRACTA SERVICIO
-# ---------------------------------------------------------------------
+
 class Servicio(Entidad):
     """Clase base para los diferentes servicios ofrecidos por Software FJ."""
 
@@ -136,9 +132,8 @@ class Servicio(Entidad):
         estado = "Disponible" if self.disponible else "No disponible"
         return f"{self.nombre} - Tarifa: ${self.tarifa:,.0f} - {estado}"
 
-# ---------------------------------------------------------------------
 # SERVICIOS ESPECIALIZADOS: HERENCIA Y POLIMORFISMO
-# ---------------------------------------------------------------------
+
 class ReservaSala(Servicio):
     """Servicio de alquiler de salas por hora."""
 
@@ -172,9 +167,8 @@ class AsesoriaEspecializada(Servicio):
     def describir(self):
         return "Asesoría especializada brindada por personal capacitado."
 
-# ---------------------------------------------------------------------
 # CLASE RESERVA
-# ---------------------------------------------------------------------
+
 class Reserva(Entidad):
     """Relaciona un cliente con un servicio, una duración y un estado."""
 
@@ -235,9 +229,8 @@ class Reserva(Entidad):
             f"Estado: {self.estado} | Costo: ${self.costo:,.0f}"
         )
 
-# ---------------------------------------------------------------------
 # GESTOR DEL SISTEMA: LISTAS INTERNAS, REGISTRO Y OPERACIONES
-# ---------------------------------------------------------------------
+
 class SistemaFJ:
     """Administra clientes, servicios y reservas usando listas en memoria."""
 
@@ -283,9 +276,8 @@ class SistemaFJ:
         for reserva in self.reservas:
             print(reserva.mostrar_informacion())
 
-# ---------------------------------------------------------------------
 # DEMOSTRACIÓN DE OPERACIONES (MÁS DE 10 CASOS)
-# ---------------------------------------------------------------------
+
 def ejecutar_demostracion():
     sistema = SistemaFJ()
     print("=" * 65)
