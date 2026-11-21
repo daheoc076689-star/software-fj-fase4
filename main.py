@@ -9,10 +9,8 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 import logging
 
-
-# ---------------------------------------------------------------------
 # CONFIGURACIÓN DEL ARCHIVO DE REGISTRO
-# ---------------------------------------------------------------------
+
 logging.basicConfig(
     filename="software_fj.log",
     level=logging.INFO,
