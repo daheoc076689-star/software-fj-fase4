@@ -1,7 +1,6 @@
 """PROYECTO FASE 4
 Sistema Integral de Gestión de Clientes, Servicios y Reservas
 Empresa: Software FJ
-
 Autor: Daniel Herrera Ocampo
 Programa: Ingeniería de Sistemas - UNAD"""
 
